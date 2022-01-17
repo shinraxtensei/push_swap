@@ -1,5 +1,5 @@
 #include"push_swap.h"
-
+#include<stdio.h>
 int main (int ac, char **av)
 {
     t_global    *tab;
@@ -11,7 +11,7 @@ int main (int ac, char **av)
     nbrs_count = args_manager(ac, av, &arr);
     if (nbrs_count < 0)
         return (EXIT_FAILURE);
-    tab = stack_creator();
+    tab = stack_creator(); 
 	if (!initialise_tab(tab, arr, nbrs_count))
 	{
 		free(arr);

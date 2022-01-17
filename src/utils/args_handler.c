@@ -49,19 +49,14 @@ static char	**pimp_my_args(int ac, char **av)
 {
 	char	**nbrs;
 	char	*av_str;
-	char	*tmp;
 	int		i;
 
 	av_str = ft_strdup("");
 	i = 0;
 	while (++i < ac)
 	{
-		tmp = ft_strjoin(av_str, av[i]);
-		free(av_str);
-		av_str = tmp;
-		tmp = ft_strjoin(av_str, " ");
-		free(av_str);
-		av_str = tmp;
+		av_str = ft_strjoin(av_str, av[i]);
+		av_str = ft_strjoin(av_str, " ");
 	}
 	nbrs = ft_split(av_str, ' ');
 	free(av_str);

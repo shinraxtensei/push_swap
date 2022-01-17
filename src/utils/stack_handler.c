@@ -23,27 +23,46 @@ void	free_tab(t_global *tab)
 	free(tab);
 }
 
+// int	initialise_tab(t_global *tab, int *arr, int n_cnt)
+// {
+// 	int	cnt;
+// 	int	i;
+// 	int	j;
+// 	int	*tmp;
+
+// 	i = -1;
+// 	while (++i < n_cnt)
+// 	{
+// 		tmp = (int *)malloc(sizeof(int));
+// 		if (!tmp)
+// 			return (0);
+// 		cnt = 0;
+// 		j = -1;
+// 		while (++j < n_cnt)
+// 			if (j != i && arr[j] < arr[i])
+// 				cnt++;
+// 		*tmp = cnt;
+// 		ft_lstadd_back(&tab->head_a, ft_lstnew(tmp));
+// 		tmp = NULL;
+// 	}
+// 	tab->a_sz = ft_lstsize(tab->head_a);	
+// 	return (1);
+// }
+
+
 int	initialise_tab(t_global *tab, int *arr, int n_cnt)
 {
-	int	cnt;
-	int	i;
-	int	j;
-	int	*tmp;
+	int *data;
+	int i = -1;
 
-	i = -1;
 	while (++i < n_cnt)
 	{
-		tmp = (int *)malloc(sizeof(int));
-		if (!tmp)
+		data = (int *)malloc(sizeof(int));
+		if(!data)
 			return (0);
-		cnt = 0;
-		j = -1;
-		while (++j < n_cnt)
-			if (j != i && arr[j] < arr[i])
-				cnt++;
-		*tmp = cnt;
-		ft_lstadd_back(&tab->head_a, ft_lstnew(tmp));
-		tmp = NULL;
+		*data = arr[i];
+		ft_lstadd_back(&tab->head_a, ft_lstnew(data));
+		data = NULL;
 	}
 	tab->a_sz = ft_lstsize(tab->head_a);
 	return (1);
