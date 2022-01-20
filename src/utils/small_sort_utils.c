@@ -1,6 +1,6 @@
 #include"../push_swap.h"
 
-static int	is_min_or_max(t_list *head, t_list *element, int find_min)
+int	is_min_or_max(t_list *head, t_list *element, int find_min)
 {
 	if (find_min)
 	{
@@ -43,7 +43,7 @@ static int	get_ins_pos(t_list *head, int data)
 
 	pos = 0;
 	prev_data = *(int *)ft_lstlast(head)->data;
-	while (head && !(data < *(int *)head->data && data > prev_data))
+	while (head && (data > *(int *)head->data || data < prev_data))
 	{
 		pos++;
 		head = head->next;
