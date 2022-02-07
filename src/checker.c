@@ -6,12 +6,12 @@
 /*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 01:30:35 by dpoveda-          #+#    #+#             */
-/*   Updated: 2022/01/18 09:35:31 by ahouari          ###   ########.fr       */
+/*   Updated: 2022/02/06 15:26:17 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+#include<stdio.h>
 static void	err_exit(t_global *tab)
 {
 	ft_putstr_fd("Error\n", 1);
@@ -35,27 +35,27 @@ static int	is_sorted(t_global *tab, int n_cnt)
 
 static void	eval_line(t_global *tab, char *line)
 {
-	if (!ft_strncmp(line, "sa\n", 4))
+	if (ft_strnstr(line, "sa\n", 3))
 		sa(tab, 0);
-	else if (!ft_strncmp(line, "sb\n", 4))
+	else if (ft_strnstr(line, "sb\n", 3))
 		sb(tab, 0);
-	else if (!ft_strncmp(line, "ss\n", 4))
+	else if (ft_strnstr(line, "ss\n", 3))
 		ss(tab, 0);
-	else if (!ft_strncmp(line, "pa\n", 4))
+	else if (ft_strnstr(line, "pa\n", 3))
 		pa(tab, 0);
-	else if (!ft_strncmp(line, "pb\n", 4))
+	else if (ft_strnstr(line, "pb\n", 3))
 		pb(tab, 0);
-	else if (!ft_strncmp(line, "ra\n", 4))
+	else if (ft_strnstr(line, "ra\n", 3))
 		ra(tab, 0);
-	else if (!ft_strncmp(line, "rb\n", 4))
+	else if (ft_strnstr(line, "rb\n", 3))
 		rb(tab, 0);
-	else if (!ft_strncmp(line, "rr\n", 4))
+	else if (ft_strnstr(line, "rr\n", 3))
 		rr(tab, 0);
-	else if (!ft_strncmp(line, "rra\n", 5))
+	else if (ft_strnstr(line, "rra\n", 4))
 		rra(tab, 0);
-	else if (!ft_strncmp(line, "rrb\n", 5))
+	else if (ft_strnstr(line, "rrb\n", 4))
 		rrb(tab, 0);
-	else if (!ft_strncmp(line, "rrr\n", 5))
+	else if (ft_strnstr(line, "rrr\n", 4))
 		rrr(tab, 0);
 	else
 		err_exit(tab);
@@ -63,10 +63,11 @@ static void	eval_line(t_global *tab, char *line)
 
 static void	handle_check(t_global *tab, int n_cnt)
 {
+
 	char	*line;
 
 	line = get_next_line(0);
-	while (line)
+	while (line && line[0] != '\n')
 	{
 		eval_line(tab, line);
 		free(line);
@@ -91,9 +92,10 @@ int	main(int ac, char **av)
 	if (n_cnt < 0)
 		return (EXIT_FAILURE);
 	tab = stack_creator();
-	if (initialise_tab(tab, arr, n_cnt))
+	if (!initialise_tab(tab, arr, n_cnt))
 	{
 		free(arr);
+
 		return (EXIT_FAILURE);
 	}
 	free(arr);
