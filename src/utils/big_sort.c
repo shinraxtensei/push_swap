@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   big_sort.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 08:41:22 by ahouari           #+#    #+#             */
+/*   Updated: 2022/02/11 08:46:08 by ahouari          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"../push_swap.h"
-#include<stdio.h>
 
 // void	smart_rotate_b_test(t_global *tab, int n)
 // {
@@ -55,7 +66,6 @@ static void	push_back_in_order(t_global *tab)
 	}
 }
 
-
 // static void	push_back_in_order(t_global *tab)
 // {
 // 	int count = 1;
@@ -73,9 +83,7 @@ static void	push_back_in_order(t_global *tab)
 // 		count++;
 // 		tab->head_b = tab->head_b->next;
 // 	}
-	
 // }
-
 
 void	big_sort(t_global *tab)
 {

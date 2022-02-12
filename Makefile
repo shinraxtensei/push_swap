@@ -30,14 +30,18 @@ all : $(LIBFT) $(NAME) $(HEADER)
 
 $(NAME): $(SRCS) $(OBJS) $(HEADER)
 		@gcc $(CFLAGS) $(SRCS) $(LIBFT) -o $@
-		@echo -------------ready------------------
+		@echo ------------------------------------
+		@echo ----------- R E A D Y --------------
+		@echo ------------------------------------
 
-$(BONUS) : $(LIBFT) $(SRCS_BONUS) $(OBJS_BONS) $(HEADER)
-		@gcc $(CFLAGS) $(SRCS_BONUS) $(LIBFT) -o $@
-		@echo -------------checker ready------------------
+bonus : $(LIBFT) $(SRCS_BONUS) $(OBJS_BONS) $(HEADER)
+		@gcc $(CFLAGS) $(SRCS_BONUS) $(LIBFT) -o $(BONUS)
+		@echo ------------------------------------
+		@echo -------- CHECKER READY -------------
+		@echo ------------------------------------
 
 $(LIBFT):
-	@Make -C ./libft
+		@Make -C ./libft
 
 clean :
 		@Make clean -C ./libft

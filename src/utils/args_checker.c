@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   args_checker.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 08:41:02 by ahouari           #+#    #+#             */
+/*   Updated: 2022/02/11 08:41:05 by ahouari          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"../push_swap.h"
 
 static int	check_nbrs_valid(char **nbrs)
@@ -41,7 +53,7 @@ static int	check_is_int(char *s)
 		return (1);
 	else if (len < 10)
 		return (0);
-	if (!sign && !is_neg && ft_strncmp(s, "2147483648", 10) >= 0)
+	if ((!sign || !is_neg) && ft_strncmp(s, "2147483648", 10) >= 0)
 		return (1);
 	else if (sign && !is_neg && ft_strncmp(s, "2147483648", 10) >= 0)
 		return (1);

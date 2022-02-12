@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_handler.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 08:41:44 by ahouari           #+#    #+#             */
+/*   Updated: 2022/02/11 08:53:03 by ahouari          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"../push_swap.h"
-#include<stdio.h>
+
 t_global	*stack_creator(void)
 {
 	t_global	*tab;
@@ -46,20 +58,8 @@ int	initialise_tab(t_global *tab, int *arr, int n_cnt)
 		tmp = NULL;
 	}
 	tab->a_sz = ft_lstsize(tab->head_a);
-	// while (1)
-	// {
-	// 	printf("%d", *((int *)tab->head_a->data));
-	// 	tab->head_a = tab->head_a->next;
-	// 	if(!tab->head_a->next)
-	// 	{
-	// 		printf("%d", *((int *)tab->head_a->data));
-	// 		break;
-	// 	}
-	// }
-		
 	return (1);
 }
-
 
 // int	initialise_tab(t_global *tab, int *arr, int n_cnt)
 // {

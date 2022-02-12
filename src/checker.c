@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ahouari <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 01:30:35 by dpoveda-          #+#    #+#             */
-/*   Updated: 2022/02/06 15:26:17 by ahouari          ###   ########.fr       */
+/*   Created: 2022/02/10 18:30:36 by ahouari           #+#    #+#             */
+/*   Updated: 2022/02/10 18:31:27 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include<stdio.h>
+
 static void	err_exit(t_global *tab)
 {
 	ft_putstr_fd("Error\n", 1);
@@ -63,7 +63,6 @@ static void	eval_line(t_global *tab, char *line)
 
 static void	handle_check(t_global *tab, int n_cnt)
 {
-
 	char	*line;
 
 	line = get_next_line(0);
@@ -95,7 +94,6 @@ int	main(int ac, char **av)
 	if (!initialise_tab(tab, arr, n_cnt))
 	{
 		free(arr);
-
 		return (EXIT_FAILURE);
 	}
 	free(arr);

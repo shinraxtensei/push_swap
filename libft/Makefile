@@ -19,15 +19,14 @@ CFLAGS := -Wall -Wextra -Werror
 .PHONY: all clean fclean re
 
 all: $(NAME)
+	@echo libft is  ready
 
-#bonus: $(OBJSB)
-#	ar -crs $(NAME) $^
 
 $(NAME): $(OBJSB)
-	ar -crs $@ $^
+	@ar -crs $@ $^
 
 %.o: %.c
-	gcc $(CFLAGS) -c $< -o $@
+	@gcc $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJSB)

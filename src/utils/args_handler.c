@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   args_handler.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 08:41:10 by ahouari           #+#    #+#             */
+/*   Updated: 2022/02/11 16:43:56 by ahouari          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"../push_swap.h"
 
 static int	*create_int_arr(int n_cnt, char **nbrs)
@@ -63,23 +75,23 @@ static char	**pimp_my_args(int ac, char **av)
 	return (nbrs);
 }
 
-int args_manager(int ac, char **av, int **arr)
+int	args_manager(int ac, char **av, int **arr)
 {
-    char    **nbrs;
-    int     i;
-    int     nbrs_count;
+	char	**nbrs;
+	int		i;
+	int		nbrs_count;
 
-    nbrs_count = 0;
-    i = -1;
-    nbrs = pimp_my_args(ac, av);
-    while (nbrs[++i])
-        nbrs_count++;
-    if (args_checker(nbrs_count, nbrs, arr))
-        nbrs_count = -1;
-    i = -1;
-    while (nbrs[++i])
-        free(nbrs[i]);
-    if(nbrs_count < 0)
-        ft_putstr_fd("Error , radi ykoun rir chi blan fl args\n", 2);
-    return (nbrs_count);
+	nbrs_count = 0;
+	i = -1;
+	nbrs = pimp_my_args(ac, av);
+	while (nbrs[++i])
+		nbrs_count++;
+	if (args_checker(nbrs_count, nbrs, arr))
+		nbrs_count = -1;
+	i = -1;
+	while (nbrs[++i])
+		free(nbrs[i]);
+	if (nbrs_count < 0)
+		ft_putstr_fd("Error\n", 2);
+	return (nbrs_count);
 }
