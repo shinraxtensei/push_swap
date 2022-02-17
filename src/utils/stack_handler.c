@@ -6,7 +6,7 @@
 /*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 08:41:44 by ahouari           #+#    #+#             */
-/*   Updated: 2022/02/11 08:53:03 by ahouari          ###   ########.fr       */
+/*   Updated: 2022/02/15 11:00:34 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,21 +60,3 @@ int	initialise_tab(t_global *tab, int *arr, int n_cnt)
 	tab->a_sz = ft_lstsize(tab->head_a);
 	return (1);
 }
-
-// int	initialise_tab(t_global *tab, int *arr, int n_cnt)
-// {
-// 	int *data;
-// 	int i = -1;
-
-// 	while (++i < n_cnt)
-// 	{
-// 		data = (int *)malloc(sizeof(int));
-// 		if(!data)
-// 			return (0);
-// 		*data = arr[i];
-// 		ft_lstadd_back(&tab->head_a, ft_lstnew(data));
-// 		data = NULL;
-// 	}
-// 	tab->a_sz = ft_lstsize(tab->head_a);
-// 	return (1);
-// }

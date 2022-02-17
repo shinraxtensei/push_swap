@@ -6,7 +6,7 @@
 /*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 08:41:10 by ahouari           #+#    #+#             */
-/*   Updated: 2022/02/11 16:43:56 by ahouari          ###   ########.fr       */
+/*   Updated: 2022/02/16 08:41:16 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,19 @@ static char	**pimp_my_args(int ac, char **av)
 {
 	char	**nbrs;
 	char	*av_str;
+	char	*tmp;
 	int		i;
 
 	av_str = ft_strdup("");
 	i = 0;
 	while (++i < ac)
 	{
-		av_str = ft_strjoin(av_str, av[i]);
-		av_str = ft_strjoin(av_str, " ");
+		tmp = ft_strjoin(av_str, av[i]);
+		free(av_str);
+		av_str = tmp;
+		tmp = ft_strjoin(av_str, " ");
+		free(av_str);
+		av_str = tmp;
 	}
 	nbrs = ft_split(av_str, ' ');
 	free(av_str);
@@ -91,6 +96,7 @@ int	args_manager(int ac, char **av, int **arr)
 	i = -1;
 	while (nbrs[++i])
 		free(nbrs[i]);
+	free(nbrs);
 	if (nbrs_count < 0)
 		ft_putstr_fd("Error\n", 2);
 	return (nbrs_count);

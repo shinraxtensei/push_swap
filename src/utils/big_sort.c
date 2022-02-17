@@ -6,24 +6,11 @@
 /*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 08:41:22 by ahouari           #+#    #+#             */
-/*   Updated: 2022/02/11 08:46:08 by ahouari          ###   ########.fr       */
+/*   Updated: 2022/02/15 11:00:03 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../push_swap.h"
-
-// void	smart_rotate_b_test(t_global *tab, int n)
-// {
-// 	if (n > tab->b_sz / 2)
-// 	{
-// 		n = tab->b_sz - n;
-// 		while (n--)
-// 			rrb(tab, 1);
-// 	}
-// 	else
-// 		while (n--)
-// 			rb(tab, 1);
-// }
 
 static void	push_in_chunks(t_global *tab, int chunk_sz)
 {
@@ -65,25 +52,6 @@ static void	push_back_in_order(t_global *tab)
 			pa(tab, 1);
 	}
 }
-
-// static void	push_back_in_order(t_global *tab)
-// {
-// 	int count = 1;
-// 	tab->b = tab->head_b;
-// 	while (tab->b_sz)
-// 	{
-// 		if(is_min_or_max(tab->b , tab->head_b ,0))
-// 		{
-// 			smart_rotate_b_test(tab, count);
-// 			pa(tab, 1);
-
-// 		}
-// 		else
-// 			pa(tab, 1);
-// 		count++;
-// 		tab->head_b = tab->head_b->next;
-// 	}
-// }
 
 void	big_sort(t_global *tab)
 {

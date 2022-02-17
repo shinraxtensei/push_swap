@@ -37,11 +37,11 @@ $(NAME): $(SRCS) $(OBJS) $(HEADER)
 bonus : $(LIBFT) $(SRCS_BONUS) $(OBJS_BONS) $(HEADER)
 		@gcc $(CFLAGS) $(SRCS_BONUS) $(LIBFT) -o $(BONUS)
 		@echo ------------------------------------
-		@echo -------- CHECKER READY -------------
+		@echo ----------- R E A D Y --------------
 		@echo ------------------------------------
 
 $(LIBFT):
-		@Make -C ./libft
+	@Make -C ./libft
 
 clean :
 		@Make clean -C ./libft
@@ -52,6 +52,7 @@ fclean :
 		@rm -rf $(OBJS) $(OBJS_BONS) $(NAME) $(BONUS)
 
 re :
-	fclean all
+	@Make fclean all
+
 
 .PHONY : all clean fclean re

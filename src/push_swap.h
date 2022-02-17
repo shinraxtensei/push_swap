@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahouari <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 18:35:02 by ahouari           #+#    #+#             */
-/*   Updated: 2022/02/10 18:38:56 by ahouari          ###   ########.fr       */
+/*   Updated: 2022/02/17 09:27:30 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ void		small_sort(t_global *tab, int nbrs_count);
 // small sort utils
 
 void		smart_push(t_global *tab);
-void		sort_a(t_global *tab);
-int			is_min_or_max(t_list *head, t_list *element, int find_min);
 
 // big sort
 

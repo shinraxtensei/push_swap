@@ -6,7 +6,7 @@
 /*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 08:41:35 by ahouari           #+#    #+#             */
-/*   Updated: 2022/02/11 08:50:21 by ahouari          ###   ########.fr       */
+/*   Updated: 2022/02/17 09:32:02 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,12 @@ static void	sort_3(t_global *tab)
 static void	sort_5(t_global *tab, int nbrs_count)
 {
 	if (nbrs_count == 5)
-		pb(tab, 1);
-	pb(tab, 1);
-	sort_3(tab);
-	if (nbrs_count == 5)
 		smart_push(tab);
 	smart_push(tab);
-	sort_a(tab);
+	sort_3(tab);
+	if (nbrs_count == 5)
+		pa(tab, 1);
+	pa(tab, 1);
 }
 
 void	small_sort(t_global *tab, int nbrs_count)
